@@ -5,7 +5,6 @@ using ResearchProjectMonolith.NET.Services;
 namespace ResearchProjectMonolith.NET.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
     public class GraphController : ControllerBase
     {
         private IGraphService _graphService;
@@ -23,7 +22,7 @@ namespace ResearchProjectMonolith.NET.Controllers
         }
 
         [HttpGet]
-        [Route("GetGraph")]
+        [Route("graph")]
         public ActionResult<Graph> GetGraph([FromQuery] int id)
         {
             Graph graph = _graphService.getGraph(id);
@@ -36,7 +35,7 @@ namespace ResearchProjectMonolith.NET.Controllers
         }
 
         [HttpGet]
-        [Route("GetEdmondsKarpMaxGraphFlow")]
+        [Route("edmondsKarpMaxGraphFlow")]
         public ActionResult<int> GetEdmondsKarpMaxGraphFlow([FromQuery] GraphParametersFlow graphParametersFlow)
         {
             Graph graph = _graphService.getGraph(graphParametersFlow.id);
@@ -53,7 +52,7 @@ namespace ResearchProjectMonolith.NET.Controllers
         }
 
         [HttpGet]
-        [Route("GetPushRelabelMaxGraphFlow")]
+        [Route("pushRelabelMaxGraphFlow")]
         public ActionResult<int> GetPushRelabelMaxGraphFlow([FromQuery] GraphParametersFlow graphParametersFlow)
         {
             DirectedGraph graph = _graphService.getDirectedGraph(graphParametersFlow.id);
