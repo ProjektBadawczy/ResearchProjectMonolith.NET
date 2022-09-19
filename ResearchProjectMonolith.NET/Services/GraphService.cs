@@ -22,11 +22,6 @@ namespace ResearchProjectMonolith.NET.Services
             graphs = new List<Graph>();
             directedGraphs = new List<DirectedGraph>();
             
-            /*int[][] adjMatrix = {
-                new [] {0, 2, 3, 4},
-                new [] {1, 0, 3, 4},
-                new [] {1, 2, 0, 4},
-                new[]{1, 2, 3, 0}};*/
             int[][] adjMatrix =
             {
                 new[] {0, 16, 13, 0, 0, 0},
@@ -40,9 +35,7 @@ namespace ResearchProjectMonolith.NET.Services
             graphs.Add(graph);
             
             int vertices = 6;
-            int source = 0;
-            int sink = 5;
- 
+
             DirectedGraph dg = new DirectedGraph(vertices, 0);
  
             dg.AddEdge(0, 1, 16);
