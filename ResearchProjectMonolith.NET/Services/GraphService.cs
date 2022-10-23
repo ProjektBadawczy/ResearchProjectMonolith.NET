@@ -24,13 +24,23 @@ namespace ResearchProjectMonolith.NET.Services
         public Graph getGraph(int id)
         {
             var graph = _graphRepository.Graphs.Find(obj => obj.graph.Id == id);
-            return graph.graph;
+            if (graph != null)
+            {
+                return graph.graph;
+            }
+
+            return null;
         }
         
         public DirectedGraph getDirectedGraph(int id)
         {
             var graph = _graphRepository.Graphs.Find(obj => obj.directedGraph.Id == id);
-            return graph.directedGraph;
+            if (graph != null)
+            {
+                return graph.directedGraph;
+            }
+
+            return null;
         }
         
     }
