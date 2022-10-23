@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using ResearchProjectMonolith.NET.Models;
+﻿using ResearchProjectMonolith.NET.Models;
 
 namespace ResearchProjectMonolith.NET.Services
 {

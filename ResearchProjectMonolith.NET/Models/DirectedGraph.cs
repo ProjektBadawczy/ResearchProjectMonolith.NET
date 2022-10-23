@@ -1,35 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+using System.Text.Json.Serialization;
 
 
 namespace ResearchProjectMonolith.NET.Models
 {
-    // DirectedGraph class explained above
     [Serializable]
     public class DirectedGraph
     {
-        public class Vertex
-        {
-
-            // number of the end vertex
-            // weight or capacity
-            // associated with the edge
-
-            public int i;
-            public int w;
-
-            public Vertex(int i, int w)
-            {
-                this.i = i;
-                this.w = w;
-            }
-        }
-
-        readonly public List<List<Vertex>> AdjacencyList;
-
-        public int Vertices;
+        [JsonPropertyName("id")]
         public int Id { get; set; }
+        
+        [JsonPropertyName("numberOfVertices")]
+        public int Vertices { get; set; }
 
+        [JsonPropertyName("adjacencyList")]
+        public List<List<Vertex>> AdjacencyList { get; set; }
+        
         public DirectedGraph(int vertices, int id)
         {
             Id = id;
@@ -59,12 +45,10 @@ namespace ResearchProjectMonolith.NET.Models
                     return true;
             return false;
         }
-
-        // Returns null if no edge
-        // is found between u and v
+        
         public Vertex GetEdge(int u, int v)
         {
-            foreach (DirectedGraph.Vertex vertex in AdjacencyList[u])
+            foreach (Vertex vertex in AdjacencyList[u])
             {
                 if (vertex.i == v)
                     return vertex;

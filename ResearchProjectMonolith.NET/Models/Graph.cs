@@ -1,12 +1,18 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 
 namespace ResearchProjectMonolith.NET.Models
 {
     [Serializable]
     public class Graph : ICloneable
     {
+        [JsonPropertyName("id")]
         public int Id { get; set; }
+        
+        [JsonPropertyName("numberOfVertices")]
         public int NumberOfVertices { get; set; }
+        
+        [JsonPropertyName("adjacencyMatrix")]
         public int[][] AdjacencyMatrix { get; set; }
         
         public Graph(int id, int numberOfVertices, int [][] adjacencyMatrix)

@@ -1,6 +1,4 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+using ResearchProjectMonolith.NET.Repositories;
 using ResearchProjectMonolith.NET.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +9,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<GraphRepository>();
 builder.Services.AddScoped<IGraphService, GraphService>();
 builder.Services.AddScoped<IBfSservice, BfSservice>();
 builder.Services.AddScoped<IEdmondsKarpService, EdmondsKarpService>();
