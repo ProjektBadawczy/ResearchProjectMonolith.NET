@@ -15,8 +15,8 @@ public class GraphRepository
 
     public GraphRepository()
     {
-        // FOR TEST PURPOSES ONLY SET small_dense_set.json is TESTED
-        string fileName = fileNames[3];
+        // FOR TEST PURPOSES ONLY SET big_dense_set.json is TESTED
+        string fileName = fileNames[0];
         string jsonString = File.ReadAllText("./Resources/" + fileName);
         Graphs = JsonSerializer.Deserialize<List<JSONGraphFormat>>(jsonString)!;
     }

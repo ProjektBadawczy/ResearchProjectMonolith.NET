@@ -26,7 +26,7 @@ namespace ResearchProjectMonolith.NET.Services
             }
             
             int u, v;
-            Graph residualGraph = (Graph)graph.Clone();
+            Graph residualGraph = (Graph)graph.DeepCopy();
             int maxFlow = 0;
             BFSResult bfsResult = _BfSservice.Bfs(residualGraph, source, destination);
 

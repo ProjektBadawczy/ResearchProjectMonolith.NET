@@ -1,10 +1,9 @@
-﻿using System;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace ResearchProjectMonolith.NET.Models
 {
     [Serializable]
-    public class Graph : ICloneable
+    public class Graph
     {
         [JsonPropertyName("id")]
         public int Id { get; set; }
@@ -23,9 +22,13 @@ namespace ResearchProjectMonolith.NET.Models
 
         }
 
-        public object Clone()
+        public object DeepCopy()
         {
-            return (Graph)MemberwiseClone();
+            Graph graph = (Graph)MemberwiseClone();
+            graph.Id = Id;
+            graph.NumberOfVertices = NumberOfVertices;
+            graph.AdjacencyMatrix = AdjacencyMatrix.Select(a => a.ToArray()).ToArray();
+            return graph;
         }
     }
 }
