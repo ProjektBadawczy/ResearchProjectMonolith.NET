@@ -26,11 +26,11 @@ Clone the repository
 Run application: `docker compose build --up`
 
 ## REST API
-Get basic information about graph based on ID: http://localhost:8081/Graph/GetGraph?id=0
+Get basic information about graph based on ID: http://localhost:8001/graph?id=53
 
-Get maximum flow in graph - Edmonds-Karp algorithm: http://localhost:8081/Graph/GetEdmondsKarpMaxGraphFlow?id=0&source=1&destination=2
+Get maximum flow in graph - Edmonds-Karp algorithm: http://localhost:8001/edmondsKarpMaxGraphFlow?id=53&source=20&destination=90
 
-Get maximum flow in graph - Push Relabel algorithm: http://localhost:8081/Graph/GetPushRelabelMaxGraphFlow?id=0&source=1&destination=2
+Get maximum flow in graph - Push Relabel algorithm: http://localhost:8001/pushRelabelMaxGraphFlow?id=53&source=20&destination=90
 
 ## Contact
 Weronika Piotrowska - weronika.piotrowska.pl@gmail.com
